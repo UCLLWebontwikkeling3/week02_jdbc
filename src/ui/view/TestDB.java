@@ -31,5 +31,7 @@ public class TestDB {
 
 			System.out.println(name);
 		}
+		statement.close();
+		connection.close();
 	}
 }
