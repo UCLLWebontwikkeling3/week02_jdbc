@@ -13,17 +13,18 @@ import domain.model.Country;
 public class TestDB {
 	public static void main(String[] args) throws SQLException {
 		Properties properties = new Properties();
-		String url = "jdbc:postgresql://databanken.ucll.be:51718/lector?currentSchema=web3";
+		String url = "jdbc:postgresql://databanken.ucll.be:51819/webontwerp?currentSchema=web3";
 		properties.setProperty("user", "");
 		properties.setProperty("password", "");
 		Secret.setPass(properties );	// implements line 17 and 18
 		properties.setProperty("ssl", "true");
 		properties.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
+		properties.setProperty("sslmode","prefer");
 		
 		Connection connection = DriverManager.getConnection(url,properties);
 		Statement statement = connection.createStatement();
 		ResultSet result = statement.executeQuery( "SELECT * FROM country" );
-		
+
 		while(result.next()){
 			String name = result.getString("name");
 			String capital = result.getString("capital");
