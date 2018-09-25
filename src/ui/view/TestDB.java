@@ -16,7 +16,7 @@ public class TestDB {
 		String url = "jdbc:postgresql://databanken.ucll.be:51819/webontwerp?currentSchema=web3";
 		properties.setProperty("user", "");
 		properties.setProperty("password", "");
-		Secret.setPass(properties );	// implements line 17 and 18
+		Secret.setPass(properties);	// implements line 17 and 18
 		properties.setProperty("ssl", "true");
 		properties.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
 		properties.setProperty("sslmode","prefer");
